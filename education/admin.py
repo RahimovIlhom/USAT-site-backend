@@ -1,4 +1,5 @@
 from django.contrib import admin
+from modeltranslation.admin import TabbedTranslationAdmin
 
 from .forms import EduTypeInlineFormSet
 from .models import EduDirection, EduType, EduProgram
@@ -11,7 +12,7 @@ class EduTypeInline(admin.TabularInline):
 
 
 @admin.register(EduDirection)
-class EduDirectionAdmin(admin.ModelAdmin):
+class EduDirectionAdmin(TabbedTranslationAdmin):
     list_display = ('name', 'author', 'created_at')
     list_filter = ('is_active', )
     search_fields = ('name', 'description')
@@ -26,7 +27,7 @@ class EduDirectionAdmin(admin.ModelAdmin):
 
 
 @admin.register(EduType)
-class EduTypeAdmin(admin.ModelAdmin):
+class EduTypeAdmin(TabbedTranslationAdmin):
     list_display = ('name', 'author', 'created_at')
     search_fields = ('name', )
     exclude = ('author', )

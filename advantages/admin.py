@@ -1,8 +1,11 @@
 from django.contrib import admin
+from modeltranslation.admin import TabbedTranslationAdmin
+
 from .models import Advantage
 
 
-class AdvantageAdmin(admin.ModelAdmin):
+@admin.register(Advantage)
+class AdvantageAdmin(TabbedTranslationAdmin):
     list_display = ('title', 'author', 'created_at')
     list_filter = ('is_active', 'author')
     search_fields = ('title', 'content')
@@ -22,6 +25,3 @@ class AdvantageAdmin(admin.ModelAdmin):
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         return qs.filter(is_active=True)
-
-
-admin.site.register(Advantage, AdvantageAdmin)

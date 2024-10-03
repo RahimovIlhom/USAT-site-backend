@@ -1,8 +1,10 @@
 from django.contrib import admin
+from modeltranslation.admin import TabbedTranslationAdmin
 from .models import Statistic, Gallery, News
 
 
-class StatisticAdmin(admin.ModelAdmin):
+@admin.register(Statistic, site=admin.site)
+class StatisticAdmin(TabbedTranslationAdmin):
     list_display = ('title', 'author', 'created_at', 'value')
     list_filter = ('is_active', 'author')
     search_fields = ('title', 'content')
@@ -24,7 +26,8 @@ class StatisticAdmin(admin.ModelAdmin):
         return qs.filter(is_active=True)
 
 
-class GalleryAdmin(admin.ModelAdmin):
+@admin.register(Gallery, site=admin.site)
+class GalleryAdmin(TabbedTranslationAdmin):
     list_display = ('title', 'author', 'created_at')
     list_filter = ('is_active', 'author')
     search_fields = ('title',)
@@ -46,7 +49,8 @@ class GalleryAdmin(admin.ModelAdmin):
         return qs.filter(is_active=True)
 
 
-class NewsAdmin(admin.ModelAdmin):
+@admin.register(News, site=admin.site)
+class NewsAdmin(TabbedTranslationAdmin):
     list_display = ('title', 'author', 'created_at')
     list_filter = ('is_active', 'author')
     search_fields = ('title', 'content')
@@ -66,8 +70,3 @@ class NewsAdmin(admin.ModelAdmin):
     def get_queryset(self, request):
         qs = super().get_queryset(request)
         return qs.filter(is_active=True)
-
-
-admin.site.register(Statistic, StatisticAdmin)
-admin.site.register(Gallery, GalleryAdmin)
-admin.site.register(News, NewsAdmin)

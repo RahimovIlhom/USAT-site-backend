@@ -6,13 +6,13 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-03 15:21+0500\n"
+"POT-Creation-Date: 2024-10-03 16:30+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language-Team: O'zbek <LL@li.org>\n"
+"Language: uz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,18 +41,18 @@ msgid "Title"
 msgstr "Sarlavha"
 
 #: advantages/models.py:10 education/models.py:13 news/models.py:13
-#: news/models.py:49
+#: news/models.py:50
 msgid "Content"
-msgstr "Mazmun"
+msgstr "Tarkib"
 
-#: advantages/models.py:11 education/models.py:14 faq/models.py:12
-#: news/models.py:14 news/models.py:32 news/models.py:51
+#: advantages/models.py:11 education/models.py:14 faq/models.py:13
+#: news/models.py:14 news/models.py:32 news/models.py:52 admin.py:43
 msgid "Is active"
-msgstr "Faolmi"
+msgstr "Faol"
 
 #: advantages/models.py:12 comments/models.py:12 education/models.py:15
-#: education/models.py:50 faq/models.py:13 news/models.py:15 news/models.py:33
-#: news/models.py:52
+#: education/models.py:50 faq/models.py:14 news/models.py:15 news/models.py:33
+#: news/models.py:53
 msgid "Created at"
 msgstr "Yaratilgan sana"
 
@@ -64,7 +64,7 @@ msgstr "Afzallik "
 msgid "Comments"
 msgstr "Izohlar"
 
-#: comments/models.py:7 news/models.py:10 news/models.py:31 news/models.py:50
+#: comments/models.py:7 news/models.py:10 news/models.py:31 news/models.py:51
 msgid "Photo"
 msgstr "Rasm"
 
@@ -82,7 +82,7 @@ msgstr "Telefon"
 
 #: comments/models.py:11
 msgid "Comment"
-msgstr "Izoh"
+msgstr "Izoh "
 
 #: comments/models.py:17
 msgid "Student comment"
@@ -90,7 +90,23 @@ msgstr "Talaba izohi "
 
 #: comments/models.py:18
 msgid "Student comments"
-msgstr "Talaba izohlari"
+msgstr "Talabalar izohlari"
+
+#: config/settings.py:153
+msgid "Home"
+msgstr "Bosh sahifa"
+
+#: config/settings.py:247
+msgid "Uzbek"
+msgstr "O'zbek"
+
+#: config/settings.py:248
+msgid "English"
+msgstr "Inglizcha"
+
+#: config/settings.py:249
+msgid "Russian"
+msgstr "Ruscha"
 
 #: education/apps.py:9 education/apps.py:10
 msgid "Education"
@@ -140,23 +156,23 @@ msgstr "Ta'lim turi nomi"
 msgid "Edu types"
 msgstr "Ta'lim turlari"
 
-#: faq/apps.py:9 faq/models.py:22
+#: faq/apps.py:9 faq/models.py:23
 msgid "FAQ"
-msgstr "Tez-tez so'raladigan savol "
+msgstr "Ko'p beriladigan savol "
 
-#: faq/apps.py:10 faq/models.py:23
+#: faq/apps.py:10 faq/models.py:24
 msgid "FAQs"
-msgstr "Tez-tez so'raladigan savollar"
+msgstr "Ko'p beriladigan savollar"
 
 #: faq/models.py:10
 msgid "Question"
 msgstr "Savol"
 
-#: faq/models.py:11
+#: faq/models.py:12
 msgid "Answer"
 msgstr "Javob"
 
-#: news/apps.py:9 news/apps.py:10 news/models.py:58 news/models.py:59
+#: news/apps.py:9 news/apps.py:10 news/models.py:59 news/models.py:60
 msgid "News"
 msgstr "Yangiliklar "
 
@@ -180,15 +196,6 @@ msgstr "Galereya "
 msgid "Galleries"
 msgstr "Galereyalar"
 
-#~ msgid "Price"
-#~ msgstr "Narx"
-
-#~ msgid "Name"
-#~ msgstr "Nomi"
-
-#~ msgid "Educations"
-#~ msgstr "Ta'limlar"
-
 #: admin.py:9
 msgid "Dashboard"
 msgstr "Boshqaruv paneli"
@@ -199,64 +206,168 @@ msgstr "Foydalanuvchilar"
 
 #: admin.py:11
 msgid "Authentication and Authorization"
-msgstr "Avtorizatsiya va Autentifikatsiya"
-
-#: admin.py:12
-msgid "Home"
-msgstr "Bosh sahifa"
+msgstr "Autentifikatsiya va Avtorizatsiya"
 
 #: admin.py:13
-msgid "Save and add another"
-msgstr "Saqlash va boshqasini qo'shish"
+msgid "Log out"
+msgstr "Chiqish"
 
 #: admin.py:14
-msgid "Save and continue editing"
-msgstr "Saqlash va tahrirni davom ettirish"
+msgid "Change password"
+msgstr "Parolni o'zgartirish"
 
 #: admin.py:15
-msgid "Words"
-msgstr "So'zlar"
+msgid "View site"
+msgstr "Saytni ko'rish"
 
 #: admin.py:16
-msgid "Characters"
-msgstr "Belgilar"
-
-#: admin.py:17
-msgid "No file selected"
-msgstr "Fayl tanlanmadi"
-
-#: admin.py:18
-msgid "Browse"
-msgstr "Qidirish"
-
-#: admin.py:19
-msgid "Change"
-msgstr "O'zgartirish"
-
-#: admin.py:20
-msgid "Delete"
-msgstr "O'chirish"
-
-#: admin.py:21
 msgid "Add"
 msgstr "Qo'shish"
 
-#: admin.py:22
+#: admin.py:17
+msgid "Delete"
+msgstr "O'chirish"
+
+#: admin.py:18
 msgid "Edit"
-msgstr "Tahrir qilish"
+msgstr "Tahrirlash"
+
+#: admin.py:19
+msgid "Save"
+msgstr "Saqlash"
+
+#: admin.py:20
+msgid "Save and continue editing"
+msgstr "Saqlash va tahrirlashni davom ettirish"
+
+#: admin.py:21
+msgid "Save and add another"
+msgstr "Saqlash va boshqasini qo'shish"
+
+#: admin.py:22
+msgid "Save and view"
+msgstr "Saqlash va ko'rish"
 
 #: admin.py:23
+msgid "Are you sure?"
+msgstr "Ishonchingiz komilmi?"
+
+#: admin.py:24
+msgid "Yes, I'm sure"
+msgstr "Ha, ishonchim komil"
+
+#: admin.py:25
+msgid "Cancel"
+msgstr "Bekor qilish"
+
+#: admin.py:26
+msgid "Select all"
+msgstr "Hammasini tanlash"
+
+#: admin.py:27
+msgid "Deselect all"
+msgstr "Tanlovni bekor qilish"
+
+#: admin.py:28
 msgid "Search"
 msgstr "Qidirish"
 
-#: admin.py:24
-msgid "Settings"
-msgstr "Sozlamalar"
+#: admin.py:29
+msgid "Add new"
+msgstr "Yangi qo'shish"
 
-#: admin.py:25
-msgid "Profile"
-msgstr "Profil"
+#: admin.py:30
+msgid "No results found"
+msgstr "Natijalar topilmadi"
 
-#: admin.py:26
-msgid "Logout"
-msgstr "Chiqish"
+#: admin.py:31
+msgid "Delete selected"
+msgstr "Tanlanganlarni o'chirish"
+
+#: admin.py:32
+msgid "Choose an action"
+msgstr "Harakatni tanlang"
+
+#: admin.py:33
+msgid "Go"
+msgstr "Yuborish"
+
+#: admin.py:34
+msgid "Actions"
+msgstr "Harakatlar"
+
+#: admin.py:35
+msgid "Select"
+msgstr "Tanlash"
+
+#: admin.py:36
+msgid "Date joined"
+msgstr "Qo'shilgan sana"
+
+#: admin.py:37
+msgid "Last login"
+msgstr "Oxirgi kirish"
+
+#: admin.py:38
+msgid "Username"
+msgstr "Foydalanuvchi nomi"
+
+#: admin.py:39
+msgid "Password"
+msgstr "Parol"
+
+#: admin.py:40
+msgid "Email address"
+msgstr "Elektron pochta manzili"
+
+#: admin.py:41
+msgid "First name"
+msgstr "Ism"
+
+#: admin.py:42
+msgid "Last name"
+msgstr "Familiya"
+
+#: admin.py:44
+msgid "Staff status"
+msgstr "Xodim holati"
+
+#: admin.py:45
+msgid "Superuser status"
+msgstr "Superfoydalanuvchi holati"
+
+#: admin.py:46
+msgid "Groups"
+msgstr "Guruhlar"
+
+#: admin.py:47
+msgid "Permissions"
+msgstr "Ruxsatlar"
+
+#: admin.py:48
+msgid "Add user"
+msgstr "Foydalanuvchi qo'shish"
+
+#: admin.py:49
+msgid "Change user"
+msgstr "Foydalanuvchini tahrirlash"
+
+#: admin.py:50
+msgid "Delete user"
+msgstr "Foydalanuvchini o'chirish"
+
+#: admin.py:51
+msgid "Group name"
+msgstr "Guruh nomi"
+
+#: admin.py:52
+msgid "Add group"
+msgstr "Guruh qo'shish"
+
+#: admin.py:53
+msgid "Change group"
+msgstr "Guruhni tahrirlash"
+
+#: admin.py:54
+msgid "Delete group"
+msgstr "Guruhni o'chirish"

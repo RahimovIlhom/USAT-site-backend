@@ -46,7 +46,8 @@ class Gallery(models.Model):
 class News(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE, verbose_name=_('Author'))
     title = models.CharField(max_length=500, verbose_name=_('Title'))
-    content = CKEditor5Field(verbose_name=_('Content'), config_name='extends')
+    # content = CKEditor5Field(verbose_name=_('Content'), config_name='extends')
+    content = models.TextField(verbose_name=_('Content'), blank=True, null=True)
     photo = models.ImageField(upload_to='news/photos', verbose_name=_('Photo'))
     is_active = models.BooleanField(default=True, verbose_name=_('Is active'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('Created at'))

@@ -1,3 +1,4 @@
+from django.utils.translation import gettext_lazy as _
 from pathlib import Path
 from environs import Env
 
@@ -17,6 +18,7 @@ ALLOWED_HOSTS = ['localhost', '*.usat.uz', '127.0.0.1']
 
 INSTALLED_APPS = [
     'jazzmin',
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -148,7 +150,7 @@ JAZZMIN_SETTINGS = {
     # Top Menu #
     ############
     "topmenu_links": [
-        {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": _("Home"), "url": "admin:index", "permissions": ["auth.view_user"]},
     ],
 
     #############
@@ -239,16 +241,20 @@ TIME_ZONE = 'Asia/Tashkent'
 USE_I18N = True
 
 USE_TZ = True
+USE_L10N = True
 
 LANGUAGES = [
-    ('uz', 'Uzbek'),
-    ('en', 'English'),
-    ('ru', 'Russian'),
+    ('uz', _('Uzbek')),
+    ('en', _('English')),
+    ('ru', _('Russian')),
 ]
 
 LOCALE_PATHS = [
     BASE_DIR / 'locale',
 ]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'uz'
+MODELTRANSLATION_LANGUAGES = ('uz', 'en', 'ru')
 
 # Static files (CSS, JavaScript, Images)
 

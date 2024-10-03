@@ -1,10 +1,11 @@
 from django.contrib import admin
+from modeltranslation.admin import TabbedTranslationAdmin
 
 from .models import FAQ
 
 
 @admin.register(FAQ)
-class FAQAdmin(admin.ModelAdmin):
+class FAQAdmin(TabbedTranslationAdmin):
     list_display = ('question', 'author', 'created_at')
     list_filter = ('author', 'is_active', )
     search_fields = ('question', 'answer')
