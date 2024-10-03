@@ -76,9 +76,12 @@ class News(models.Model):
 
 
 class ViewRecord(models.Model):
-    news = models.ForeignKey(News, on_delete=models.CASCADE, verbose_name=_('News'))
+    news = models.ForeignKey(News, on_delete=models.CASCADE, related_name='view_records',
+                             verbose_name=_('News'))
     ip_address = models.GenericIPAddressField(verbose_name=_('IP Address'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('Created at'))
+
+    objects = models.Manager()
 
     class Meta:
         unique_together = ('news', 'ip_address')

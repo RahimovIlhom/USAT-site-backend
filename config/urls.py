@@ -28,6 +28,7 @@ urlpatterns = [
     path('api/docs/redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('api/v1/advantages/', include('advantages.urls')),
+    path('api/v1/news/', include('news.urls')),
 ]
 
 urlpatterns += i18n_patterns(
