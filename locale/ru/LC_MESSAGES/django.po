@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-03 16:30+0500\n"
+"POT-Creation-Date: 2024-10-03 18:29+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Русский <LL@li.org>\n"
@@ -34,27 +34,27 @@ msgstr "Преимущества"
 
 #: advantages/models.py:8 comments/models.py:6 education/models.py:11
 #: education/models.py:48 faq/models.py:9 news/models.py:9 news/models.py:29
-#: news/models.py:47
+#: news/models.py:56
 msgid "Author"
 msgstr "Автор"
 
-#: advantages/models.py:9 news/models.py:11 news/models.py:30 news/models.py:48
+#: advantages/models.py:9 news/models.py:11 news/models.py:30 news/models.py:57
 msgid "Title"
 msgstr "Заголовок"
 
 #: advantages/models.py:10 education/models.py:13 news/models.py:13
-#: news/models.py:50
+#: news/models.py:60
 msgid "Content"
 msgstr "Содержание"
 
 #: advantages/models.py:11 education/models.py:14 faq/models.py:13
-#: news/models.py:14 news/models.py:32 news/models.py:52
+#: news/models.py:14 news/models.py:32 news/models.py:64
 msgid "Is active"
 msgstr "Активен"
 
 #: advantages/models.py:12 comments/models.py:12 education/models.py:15
 #: education/models.py:50 faq/models.py:14 news/models.py:15 news/models.py:33
-#: news/models.py:53
+#: news/models.py:65 news/models.py:81
 msgid "Created at"
 msgstr "Создан"
 
@@ -66,7 +66,7 @@ msgstr "Преимущество"
 msgid "Comments"
 msgstr "Комментарии"
 
-#: comments/models.py:7 news/models.py:10 news/models.py:31 news/models.py:51
+#: comments/models.py:7 news/models.py:10 news/models.py:31 news/models.py:61
 msgid "Photo"
 msgstr "Фото"
 
@@ -94,19 +94,19 @@ msgstr "Комментарий студента"
 msgid "Student comments"
 msgstr "Комментарии студентов"
 
-#: config/settings.py:153
+#: config/settings.py:154
 msgid "Home"
 msgstr "Главная"
 
-#: config/settings.py:247
+#: config/settings.py:248
 msgid "Uzbek"
 msgstr "Узбекский"
 
-#: config/settings.py:248
+#: config/settings.py:249
 msgid "English"
 msgstr "Английский"
 
-#: config/settings.py:249
+#: config/settings.py:250
 msgid "Russian"
 msgstr "Русский"
 
@@ -174,7 +174,8 @@ msgstr "Вопрос"
 msgid "Answer"
 msgstr "Ответ"
 
-#: news/apps.py:9 news/apps.py:10 news/models.py:59 news/models.py:60
+#: news/apps.py:9 news/apps.py:10 news/models.py:71 news/models.py:72
+#: news/models.py:79
 msgid "News"
 msgstr "Новости"
 
@@ -197,3 +198,43 @@ msgstr "Галерея"
 #: news/models.py:40
 msgid "Galleries"
 msgstr "Галереи"
+
+#: news/models.py:47
+msgid "Low"
+msgstr "Низкий"
+
+#: news/models.py:48
+msgid "Medium"
+msgstr "Средний"
+
+#: news/models.py:49
+msgid "High"
+msgstr "Высокий"
+
+#: news/models.py:50
+msgid "Very high"
+msgstr "Очень высокий"
+
+#: news/models.py:51
+msgid "Extreme"
+msgstr "Экстремальный"
+
+#: news/models.py:52
+msgid "Critical"
+msgstr "Критический"
+
+#: news/models.py:58
+msgid "Summary"
+msgstr "Резюме"
+
+#: news/models.py:62
+msgid "Video URL"
+msgstr "URL видео"
+
+#: news/models.py:63
+msgid "Rank"
+msgstr "Ранг"
+
+#: news/models.py:80
+msgid "IP Address"
+msgstr "IP-адрес"

@@ -15,4 +15,4 @@ class GalleryTranslationOptions(TranslationOptions):
 
 @register(News)
 class NewsTranslationOptions(TranslationOptions):
-    fields = ('title', 'content')
+    fields = ('title', 'summary', 'content')
