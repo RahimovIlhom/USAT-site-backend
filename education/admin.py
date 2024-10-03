@@ -16,7 +16,7 @@ class EduDirectionAdmin(admin.ModelAdmin):
     list_filter = ('is_active', )
     search_fields = ('name', 'description')
     exclude = ('is_active', 'author')
-    readonly_fields = ('author', 'created_at',)
+    readonly_fields = ('author',)
     inlines = [EduTypeInline]
 
     def save_model(self, request, obj, form, change):
@@ -30,7 +30,7 @@ class EduTypeAdmin(admin.ModelAdmin):
     list_display = ('name', 'author', 'created_at')
     search_fields = ('name', )
     exclude = ('author', )
-    readonly_fields = ('author', 'created_at',)
+    readonly_fields = ('author',)
 
     def save_model(self, request, obj, form, change):
         if not change:

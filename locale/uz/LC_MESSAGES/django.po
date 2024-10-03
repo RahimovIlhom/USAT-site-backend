@@ -1,0 +1,223 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-03 15:21+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: academic/apps.py:9
+msgid "Academic"
+msgstr "Akademik"
+
+#: academic/apps.py:10
+msgid "Academics"
+msgstr "Akademiklar"
+
+#: advantages/apps.py:9 advantages/apps.py:10 advantages/models.py:19
+msgid "Advantages"
+msgstr "Afzalliklar"
+
+#: advantages/models.py:8 comments/models.py:6 education/models.py:11
+#: education/models.py:48 faq/models.py:9 news/models.py:9 news/models.py:29
+#: news/models.py:47
+msgid "Author"
+msgstr "Muallif"
+
+#: advantages/models.py:9 news/models.py:11 news/models.py:30 news/models.py:48
+msgid "Title"
+msgstr "Sarlavha"
+
+#: advantages/models.py:10 education/models.py:13 news/models.py:13
+#: news/models.py:49
+msgid "Content"
+msgstr "Mazmun"
+
+#: advantages/models.py:11 education/models.py:14 faq/models.py:12
+#: news/models.py:14 news/models.py:32 news/models.py:51
+msgid "Is active"
+msgstr "Faolmi"
+
+#: advantages/models.py:12 comments/models.py:12 education/models.py:15
+#: education/models.py:50 faq/models.py:13 news/models.py:15 news/models.py:33
+#: news/models.py:52
+msgid "Created at"
+msgstr "Yaratilgan sana"
+
+#: advantages/models.py:18
+msgid "Advantage"
+msgstr "Afzallik "
+
+#: comments/apps.py:9 comments/apps.py:10
+msgid "Comments"
+msgstr "Izohlar"
+
+#: comments/models.py:7 news/models.py:10 news/models.py:31 news/models.py:50
+msgid "Photo"
+msgstr "Rasm"
+
+#: comments/models.py:8
+msgid "Fullname"
+msgstr "To'liq ism"
+
+#: comments/models.py:9
+msgid "Email"
+msgstr "Elektron pochta"
+
+#: comments/models.py:10
+msgid "Phone"
+msgstr "Telefon"
+
+#: comments/models.py:11
+msgid "Comment"
+msgstr "Izoh"
+
+#: comments/models.py:17
+msgid "Student comment"
+msgstr "Talaba izohi "
+
+#: comments/models.py:18
+msgid "Student comments"
+msgstr "Talaba izohlari"
+
+#: education/apps.py:9 education/apps.py:10
+msgid "Education"
+msgstr "Ta'lim"
+
+#: education/models.py:12
+msgid "Direction name"
+msgstr "Yo'nalish nomi"
+
+#: education/models.py:24
+msgid "Edu direction"
+msgstr "Ta'lim yo'nalishi "
+
+#: education/models.py:25
+msgid "Edu directions"
+msgstr "Ta'lim yo'nalishlari"
+
+#: education/models.py:30 education/models.py:58
+msgid "Edu type"
+msgstr "Ta'lim turi "
+
+#: education/models.py:31
+msgid "Direction"
+msgstr "Yo'nalish"
+
+#: education/models.py:33
+msgid "Contract price"
+msgstr "Kontrakt narxi"
+
+#: education/models.py:35
+msgid "Study duration"
+msgstr "O'qish davomiyligi"
+
+#: education/models.py:43
+msgid "Edu program"
+msgstr "Ta'lim dasturi "
+
+#: education/models.py:44
+msgid "Edu programs"
+msgstr "Ta'lim dasturlari"
+
+#: education/models.py:49
+msgid "Type name"
+msgstr "Ta'lim turi nomi"
+
+#: education/models.py:59
+msgid "Edu types"
+msgstr "Ta'lim turlari"
+
+#: faq/apps.py:9 faq/models.py:22
+msgid "FAQ"
+msgstr "Tez-tez so'raladigan savol "
+
+#: faq/apps.py:10 faq/models.py:23
+msgid "FAQs"
+msgstr "Tez-tez so'raladigan savollar"
+
+#: faq/models.py:10
+msgid "Question"
+msgstr "Savol"
+
+#: faq/models.py:11
+msgid "Answer"
+msgstr "Javob"
+
+#: news/apps.py:9 news/apps.py:10 news/models.py:58 news/models.py:59
+msgid "News"
+msgstr "Yangiliklar "
+
+#: news/models.py:12
+msgid "Value"
+msgstr "Qiymat"
+
+#: news/models.py:21
+msgid "Statistic"
+msgstr "Statistika "
+
+#: news/models.py:22
+msgid "Statistics"
+msgstr "Statistikalar"
+
+#: news/models.py:39
+msgid "Gallery"
+msgstr "Galereya "
+
+#: news/models.py:40
+msgid "Galleries"
+msgstr "Galereyalar"
+
+#~ msgid "Price"
+#~ msgstr "Narx"
+
+#~ msgid "Name"
+#~ msgstr "Nomi"
+
+#~ msgid "Educations"
+#~ msgstr "Ta'limlar"
+
+#~ msgid "Home"
+#~ msgstr "Bosh sahifa"
+
+#~ msgid "Authentication and Authorization"
+#~ msgstr "Avtorizatsiya va Autentifikatsiya"
+
+#~ msgid "Users"
+#~ msgstr "Foydalanuvchilar"
+
+#~ msgid "User"
+#~ msgstr "Foydalanuvchi "
+
+#~ msgid "Dashboard"
+#~ msgstr "Boshqaruv paneli"
+
+#~ msgid "SAVE AND ANOTHER"
+#~ msgstr "SAQLASH VA BOSHQASI"
+
+#~ msgid "SAVE AND CONTINUE EDITING"
+#~ msgstr "SAQLASH VA TREDTAKSIYADA DAVOM ETISH"
+
+#~ msgid "Words"
+#~ msgstr "So'zlar"
+
+#~ msgid "Characters"
+#~ msgstr "Belgilar"
+
+#~ msgid "No file selected"
+#~ msgstr "Fayl tanlanmadi"
+
+#~ msgid "Browse"
+#~ msgstr "Qidirish"

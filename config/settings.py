@@ -232,7 +232,7 @@ JAZZMIN_UI_TWEAKS = {
 
 # Internationalization
 
-LANGUAGE_CODE = 'uz-uz'
+LANGUAGE_CODE = 'uz-UZ'
 
 TIME_ZONE = 'Asia/Tashkent'
 

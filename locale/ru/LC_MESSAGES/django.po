@@ -1,0 +1,194 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-03 15:21+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: academic/apps.py:9
+msgid "Academic"
+msgstr "Академический"
+
+#: academic/apps.py:10
+msgid "Academics"
+msgstr "Академические"
+
+#: advantages/apps.py:9 advantages/apps.py:10 advantages/models.py:19
+msgid "Advantages"
+msgstr "Преимущества"
+
+#: advantages/models.py:8 comments/models.py:6 education/models.py:11
+#: education/models.py:48 faq/models.py:9 news/models.py:9 news/models.py:29
+#: news/models.py:47
+msgid "Author"
+msgstr "Автор"
+
+#: advantages/models.py:9 news/models.py:11 news/models.py:30 news/models.py:48
+msgid "Title"
+msgstr "Название"
+
+#: advantages/models.py:10 education/models.py:13 news/models.py:13
+#: news/models.py:49
+msgid "Content"
+msgstr "Содержание"
+
+#: advantages/models.py:11 education/models.py:14 faq/models.py:12
+#: news/models.py:14 news/models.py:32 news/models.py:51
+msgid "Is active"
+msgstr "Активен"
+
+#: advantages/models.py:12 comments/models.py:12 education/models.py:15
+#: education/models.py:50 faq/models.py:13 news/models.py:15 news/models.py:33
+#: news/models.py:52
+msgid "Created at"
+msgstr "Создано"
+
+#: advantages/models.py:18
+msgid "Advantage"
+msgstr "Преимущество"
+
+#: comments/apps.py:9 comments/apps.py:10
+msgid "Comments"
+msgstr "Комментарии"
+
+#: comments/models.py:7 news/models.py:10 news/models.py:31 news/models.py:50
+msgid "Photo"
+msgstr "Фото"
+
+#: comments/models.py:8
+msgid "Fullname"
+msgstr "Полное имя"
+
+#: comments/models.py:9
+msgid "Email"
+msgstr "Электронная почта"
+
+#: comments/models.py:10
+msgid "Phone"
+msgstr "Телефон"
+
+#: comments/models.py:11
+msgid "Comment"
+msgstr "Комментарий"
+
+#: comments/models.py:17
+msgid "Student comment"
+msgstr "Комментарий студента"
+
+#: comments/models.py:18
+msgid "Student comments"
+msgstr "Комментарии студентов"
+
+#: education/apps.py:9 education/apps.py:10
+msgid "Education"
+msgstr "Образование"
+
+#: education/models.py:12
+msgid "Direction name"
+msgstr "Направление"
+
+#: education/models.py:24
+msgid "Edu direction"
+msgstr "Направление обучения"
+
+#: education/models.py:25
+msgid "Edu directions"
+msgstr "Направления обучения"
+
+#: education/models.py:30 education/models.py:58
+msgid "Edu type"
+msgstr "Тип образования"
+
+#: education/models.py:31
+msgid "Direction"
+msgstr "Направление"
+
+#: education/models.py:33
+msgid "Contract price"
+msgstr "Стоимость контракта"
+
+#: education/models.py:35
+msgid "Study duration"
+msgstr "Продолжительность обучения"
+
+#: education/models.py:43
+msgid "Edu program"
+msgstr "Учебная программа"
+
+#: education/models.py:44
+msgid "Edu programs"
+msgstr "Учебные программы"
+
+#: education/models.py:49
+msgid "Type name"
+msgstr "Название типа"
+
+#: education/models.py:59
+msgid "Edu types"
+msgstr "Типы образования"
+
+#: faq/apps.py:9 faq/models.py:22
+msgid "FAQ"
+msgstr "Часто задаваемые вопросы"
+
+#: faq/apps.py:10 faq/models.py:23
+msgid "FAQs"
+msgstr "Часто задаваемые вопросы"
+
+#: faq/models.py:10
+msgid "Question"
+msgstr "Вопрос"
+
+#: faq/models.py:11
+msgid "Answer"
+msgstr "Ответ"
+
+#: news/apps.py:9 news/apps.py:10 news/models.py:58 news/models.py:59
+msgid "News"
+msgstr "Новости"
+
+#: news/models.py:12
+msgid "Value"
+msgstr "Значение"
+
+#: news/models.py:21
+msgid "Statistic"
+msgstr "Статистика"
+
+#: news/models.py:22
+msgid "Statistics"
+msgstr "Статистика"
+
+#: news/models.py:39
+msgid "Gallery"
+msgstr "Галерея"
+
+#: news/models.py:40
+msgid "Galleries"
+msgstr "Галереи"
+
+#~ msgid "Price"
+#~ msgstr "Цена"
+
+#~ msgid "Name"
+#~ msgstr "Имя"
+
+#, fuzzy
+#~| msgid "Edu directions"
+#~ msgid "Educations"
+#~ msgstr "Образования"

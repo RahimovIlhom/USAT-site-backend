@@ -9,7 +9,7 @@ class ActiveObjectManager(models.Manager):
 
 class EduDirection(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE, verbose_name=_('Author'))
-    name = models.CharField(max_length=255, verbose_name=_('Name'))
+    name = models.CharField(max_length=255, verbose_name=_('Direction name'))
     content = models.TextField(blank=True, null=True, verbose_name=_('Content'))
     is_active = models.BooleanField(default=True, verbose_name=_('Is active'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('Created at'))
@@ -30,7 +30,7 @@ class EduProgram(models.Model):
                                  verbose_name=_('Edu type'))
     direction = models.ForeignKey(EduDirection, on_delete=models.CASCADE, verbose_name=_('Direction'),
                                   related_name='edu_programs')
-    price = models.IntegerField(verbose_name=_('Price'))
+    price = models.IntegerField(verbose_name=_('Contract price'))
     study_duration = models.DecimalField(max_digits=4, decimal_places=2, blank=True, null=True,
                                          verbose_name=_('Study duration'))
 
@@ -46,7 +46,7 @@ class EduProgram(models.Model):
 
 class EduType(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE, verbose_name=_('Author'))
-    name = models.CharField(max_length=255, verbose_name=_('Name'))
+    name = models.CharField(max_length=255, verbose_name=_('Type name'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('Created at'))
 
     objects = models.Manager()

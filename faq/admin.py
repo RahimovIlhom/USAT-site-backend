@@ -10,7 +10,7 @@ class FAQAdmin(admin.ModelAdmin):
     search_fields = ('question', 'answer')
     ordering = ('-created_at',)
     exclude = ('is_active', 'author')
-    readonly_fields = ('author', 'created_at',)
+    readonly_fields = ('author',)
 
     def save_model(self, request, obj, form, change):
         if not change:
