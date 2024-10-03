@@ -189,35 +189,74 @@ msgstr "Galereyalar"
 #~ msgid "Educations"
 #~ msgstr "Ta'limlar"
 
-#~ msgid "Home"
-#~ msgstr "Bosh sahifa"
+#: admin.py:9
+msgid "Dashboard"
+msgstr "Boshqaruv paneli"
 
-#~ msgid "Authentication and Authorization"
-#~ msgstr "Avtorizatsiya va Autentifikatsiya"
+#: admin.py:10
+msgid "Users"
+msgstr "Foydalanuvchilar"
 
-#~ msgid "Users"
-#~ msgstr "Foydalanuvchilar"
+#: admin.py:11
+msgid "Authentication and Authorization"
+msgstr "Avtorizatsiya va Autentifikatsiya"
 
-#~ msgid "User"
-#~ msgstr "Foydalanuvchi "
+#: admin.py:12
+msgid "Home"
+msgstr "Bosh sahifa"
 
-#~ msgid "Dashboard"
-#~ msgstr "Boshqaruv paneli"
+#: admin.py:13
+msgid "Save and add another"
+msgstr "Saqlash va boshqasini qo'shish"
 
-#~ msgid "SAVE AND ANOTHER"
-#~ msgstr "SAQLASH VA BOSHQASI"
+#: admin.py:14
+msgid "Save and continue editing"
+msgstr "Saqlash va tahrirni davom ettirish"
 
-#~ msgid "SAVE AND CONTINUE EDITING"
-#~ msgstr "SAQLASH VA TREDTAKSIYADA DAVOM ETISH"
+#: admin.py:15
+msgid "Words"
+msgstr "So'zlar"
 
-#~ msgid "Words"
-#~ msgstr "So'zlar"
+#: admin.py:16
+msgid "Characters"
+msgstr "Belgilar"
 
-#~ msgid "Characters"
-#~ msgstr "Belgilar"
+#: admin.py:17
+msgid "No file selected"
+msgstr "Fayl tanlanmadi"
 
-#~ msgid "No file selected"
-#~ msgstr "Fayl tanlanmadi"
+#: admin.py:18
+msgid "Browse"
+msgstr "Qidirish"
 
-#~ msgid "Browse"
-#~ msgstr "Qidirish"
+#: admin.py:19
+msgid "Change"
+msgstr "O'zgartirish"
+
+#: admin.py:20
+msgid "Delete"
+msgstr "O'chirish"
+
+#: admin.py:21
+msgid "Add"
+msgstr "Qo'shish"
+
+#: admin.py:22
+msgid "Edit"
+msgstr "Tahrir qilish"
+
+#: admin.py:23
+msgid "Search"
+msgstr "Qidirish"
+
+#: admin.py:24
+msgid "Settings"
+msgstr "Sozlamalar"
+
+#: admin.py:25
+msgid "Profile"
+msgstr "Profil"
+
+#: admin.py:26
+msgid "Logout"
+msgstr "Chiqish"
