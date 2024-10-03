@@ -1,11 +1,11 @@
 from django.contrib import admin
 
 from .forms import EduTypeInlineFormSet
-from .models import EduDirection, EduType, EduTypeName
+from .models import EduDirection, EduType, EduProgram
 
 
 class EduTypeInline(admin.TabularInline):
-    model = EduType
+    model = EduProgram
     extra = 1
     formset = EduTypeInlineFormSet
 
@@ -16,6 +16,7 @@ class EduDirectionAdmin(admin.ModelAdmin):
     list_filter = ('is_active', )
     search_fields = ('name', 'description')
     exclude = ('is_active', 'author')
+    readonly_fields = ('author', 'created_at',)
     inlines = [EduTypeInline]
 
     def save_model(self, request, obj, form, change):
@@ -24,11 +25,12 @@ class EduDirectionAdmin(admin.ModelAdmin):
         obj.save()
 
 
-@admin.register(EduTypeName)
-class EduTypeNameAdmin(admin.ModelAdmin):
+@admin.register(EduType)
+class EduTypeAdmin(admin.ModelAdmin):
     list_display = ('name', 'author', 'created_at')
     search_fields = ('name', )
     exclude = ('author', )
+    readonly_fields = ('author', 'created_at',)
 
     def save_model(self, request, obj, form, change):
         if not change:

@@ -1,11 +1,14 @@
 asgiref==3.8.1
-Django==5.0
+Django==5.0.4
+django-ckeditor-5==0.2.13
 django-cors-headers==4.4.0
 django-jazzmin==3.0.0
+django-js-asset==2.2.0
 djangorestframework==3.15.2
 environs==11.0.0
 marshmallow==3.22.0
 packaging==24.1
+pillow==10.4.0
 python-dotenv==1.0.1
 sqlparse==0.5.1
 typing_extensions==4.12.2

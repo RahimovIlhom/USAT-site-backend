@@ -10,7 +10,7 @@ class ActiveObjectManager(models.Manager):
 class EduDirection(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE, verbose_name=_('Author'))
     name = models.CharField(max_length=255, verbose_name=_('Name'))
-    description = models.TextField(blank=True, null=True, verbose_name=_('Description'))
+    content = models.TextField(blank=True, null=True, verbose_name=_('Content'))
     is_active = models.BooleanField(default=True, verbose_name=_('Is active'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('Created at'))
 
@@ -25,23 +25,26 @@ class EduDirection(models.Model):
         verbose_name_plural = _('Edu directions')
 
 
-class EduType(models.Model):
-    edu_type_name = models.ForeignKey('EduTypeName', on_delete=models.CASCADE, related_name='edu_types', verbose_name=_('Edu type name'))
-    direction = models.ForeignKey(EduDirection, on_delete=models.CASCADE, verbose_name=_('Direction'))
+class EduProgram(models.Model):
+    edu_type = models.ForeignKey('EduType', on_delete=models.CASCADE, related_name='edu_programs',
+                                 verbose_name=_('Edu type'))
+    direction = models.ForeignKey(EduDirection, on_delete=models.CASCADE, verbose_name=_('Direction'),
+                                  related_name='edu_programs')
     price = models.IntegerField(verbose_name=_('Price'))
-    study_duration = models.DecimalField(max_digits=4, decimal_places=2, blank=True, null=True, verbose_name=_('Study duration'))
+    study_duration = models.DecimalField(max_digits=4, decimal_places=2, blank=True, null=True,
+                                         verbose_name=_('Study duration'))
 
     objects = models.Manager()
 
     def __str__(self):
-        return f"{self.edu_type_name} - {self.price}"
+        return f"{self.edu_type} - {self.price}"
 
     class Meta:
-        verbose_name = _('Edu type')
-        verbose_name_plural = _('Edu types')
+        verbose_name = _('Edu program')
+        verbose_name_plural = _('Edu programs')
 
 
-class EduTypeName(models.Model):
+class EduType(models.Model):
     author = models.ForeignKey('auth.User', on_delete=models.CASCADE, verbose_name=_('Author'))
     name = models.CharField(max_length=255, verbose_name=_('Name'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('Created at'))
@@ -52,5 +55,5 @@ class EduTypeName(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = _('Edu type name')
-        verbose_name_plural = _('Edu type names')
+        verbose_name = _('Edu type')
+        verbose_name_plural = _('Edu types')

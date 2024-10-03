@@ -8,4 +8,4 @@ class EduTypeInlineFormSet(forms.BaseInlineFormSet):
         super().clean()
         # Check if at least one EduType is provided
         if not any(form.cleaned_data for form in self.forms if not form.cleaned_data.get('DELETE', False)):
-            raise ValidationError('Kamida bitta EduType ni to\'ldirishingiz kerak.')
+            raise ValidationError('Kamida bitta ta\'lim turini kiriting!')

@@ -28,9 +28,15 @@ INSTALLED_APPS = [
     # global apps
     'rest_framework',
     'corsheaders',
+    'django_ckeditor_5',
 
     # local apps
     'education.apps.EducationConfig',
+    'academic.apps.AcademicConfig',
+    'news.apps.NewsConfig',
+    'advantages.apps.AdvantagesConfig',
+    'comments.apps.CommentsConfig',
+    'faq.apps.FaqConfig',
 ]
 
 MIDDLEWARE = [
@@ -157,6 +163,16 @@ JAZZMIN_SETTINGS = {
         "auth": "fas fa-users-cog",
         "auth.user": "fas fa-user",
         "auth.Group": "fas fa-users",
+        "news.News": "fas fa-newspaper",
+        "news.Gallery": "fas fa-images",
+        "news.Statistic": "fas fa-chart-pie",
+        "advantages.Advantage": "fas fa-star",
+        "comments.StudentComment": "fas fa-comments",
+        "faq.Faq": "fas fa-question",
+        "academic.Academic": "fas fa-university",
+        "education.EduDirection": "fas fa-graduation-cap",
+        "education.EduProgram": "fas fa-book",
+        "education.EduType": "fas fa-tags",
     },
     "default_icon_parents": "fas fa-chevron-circle-right",
     "default_icon_children": "fas fa-circle",
@@ -247,6 +263,34 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
+
+# CKEditor configurations
+
+CKEDITOR_5_ALLOW_ALL_FILE_TYPES = True
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 'auto',
+        'width': '100%',
+        'extraPlugins': ','.join([
+            'image2',
+            'autolink',
+            'code',
+            'table',
+            'emoji',
+        ]),
+    },
+    'faq': {
+        'config': 'default',
+    },
+    'extends': {
+        'config': 'default',
+    },
+}
+
+CKEDITOR_5_FILE_UPLOAD_PERMISSION = "staff"
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_RESTRICT_BY_USER = True
 
 # Default primary key field type
 

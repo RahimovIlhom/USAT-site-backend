@@ -6,12 +6,12 @@ from django.urls import path, include
 from config import settings
 
 urlpatterns = [
-
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path("ckeditor5/", include('django_ckeditor_5.urls')),
 )
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
