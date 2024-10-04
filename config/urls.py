@@ -1,6 +1,8 @@
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
 from django.urls import path, include
 
 from config import settings
@@ -10,23 +12,24 @@ from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
 schema_view = get_schema_view(
-   openapi.Info(
-      title="USAT API",
-      default_version='v1',
-      description="USAT API documentation",
-      terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="ilhomjonpersonal@gmail.com"),
-      license=openapi.License(name="USAT License"),
-   ),
-   public=True,
-   permission_classes=[permissions.IsAdminUser,],
+    openapi.Info(
+        title="USAT API",
+        default_version='v1',
+        description="USAT API documentation",
+        terms_of_service="https://www.google.com/policies/terms/",
+        contact=openapi.Contact(email="ilhomjonpersonal@gmail.com"),
+        license=openapi.License(name="USAT License"),
+    ),
+    public=False,
+    permission_classes=[permissions.IsAuthenticated],
 )
 
 urlpatterns = [
-    path('api/docs/swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
-    path('api/docs/swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    path('api/docs/redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('', include('accounts.urls')),
+    path('api/docs/swagger<format>/', schema_view.without_ui(cache_timeout=0), name='schema-json'),
+    path('api/docs/swagger/', login_required(schema_view.with_ui('swagger', cache_timeout=0)), name='schema-swagger-ui'),
+    path('api/docs/redoc/', login_required(schema_view.with_ui('redoc', cache_timeout=0)), name='schema-redoc'),
     path('api/v1/advantages/', include('advantages.urls')),
     path('api/v1/news/', include('news.urls')),
 ]

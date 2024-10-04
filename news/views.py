@@ -41,7 +41,7 @@ path_param = openapi.Parameter(
         path_param,
         headers_param,
     ],
-    operation_summary='Yangiliklarni boshqarish',
+    operation_summary='Yangilikni ID raqami orqali olish',
     responses={
         200: NewsSerializer(many=False),
         404: openapi.Response(

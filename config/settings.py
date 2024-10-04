@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'django_ckeditor_5',
 
     # local apps
+    'accounts.apps.AccountsConfig',
     'education.apps.EducationConfig',
     'academic.apps.AcademicConfig',
     'news.apps.NewsConfig',
@@ -65,14 +66,24 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 20,
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         # 'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.AllowAny',
+        'rest_framework.permissions.IsAuthenticated',
     ),
 }
+
+SWAGGER_SETTINGS = {
+    'USE_SESSION_AUTH': True,
+    'USE_JSON_EDITOR': True,
+    'LOGIN_URL': '/api-auth/login/',
+    'LOGOUT_URL': '/accounts/logout/',
+}
+
+LOGIN_URL = '/api-auth/login/'
+LOGIN_REDIRECT_URL = '/api/docs/swagger/'
 
 TEMPLATES = [
     {
@@ -143,7 +154,7 @@ JAZZMIN_SETTINGS = {
     "login_logo_dark": "imgs/logo.jpg",
     "site_logo_classes": "img-circle",
     "site_icon": "imgs/icon.png",
-    "welcome_sign": "Welcome to the USAT site",
+    "welcome_sign": "Welcome to the USAT admin site",
     "copyright": "Copyright by the USAT",
     "user_avatar": None,
 
