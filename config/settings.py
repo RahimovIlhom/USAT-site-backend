@@ -54,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # 'accounts.middleware.CheckSecretMiddleware',
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -71,7 +72,9 @@ REST_FRAMEWORK = {
         # 'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.AllowAny',
+        'accounts.permissions.HasXSecretPermission',
+        # 'rest_framework.permissions.AllowAny',
+        # 'rest_framework.permissions.IsAuthenticated',
     ),
 }
 

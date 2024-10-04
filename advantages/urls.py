@@ -1,7 +1,7 @@
 from django.urls import path
 
-from .views import get_advantages_list
+from .views import GetAdvantagesListView
 
 urlpatterns = [
-    path('all/', get_advantages_list, name='get_advantages_list'),
+    path('all/', GetAdvantagesListView.as_view(), name='get_advantages_list'),
 ]
