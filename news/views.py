@@ -27,7 +27,7 @@ class GetNewsListView(APIView):
     def get(self, request):
         news_all = News.active_objects.all().order_by('-created_at')[:20]
 
-        return Response(data=NewsListSerializer(news_all, many=True).data, status=200)
+        return Response(data=NewsListSerializer(news_all, many=True, context={'request': request}).data, status=200)
 
 
 path_param = openapi.Parameter(
@@ -75,7 +75,7 @@ class GetDetailNewsView(APIView):
             else:
                 return Response({'detail': 'News not found.'}, status=status.HTTP_404_NOT_FOUND)
 
-        return Response(data=NewsDetailSerializer(news).data, status=status.HTTP_200_OK)
+        return Response(data=NewsDetailSerializer(news, context={'request': request}).data, status=status.HTTP_200_OK)
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')

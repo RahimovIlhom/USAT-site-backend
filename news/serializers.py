@@ -12,6 +12,7 @@ class AuthorSerializer(serializers.ModelSerializer):
 
 class NewsListSerializer(serializers.ModelSerializer):
     views = serializers.SerializerMethodField('get_views')
+    photo = serializers.SerializerMethodField('get_photo_url')
 
     class Meta:
         model = News
@@ -20,10 +21,17 @@ class NewsListSerializer(serializers.ModelSerializer):
     def get_views(self, obj):
         return obj.view_records.count() + 1
 
+    def get_photo_url(self, obj):
+        request = self.context.get('request')
+        if obj.photo and request:
+            return request.build_absolute_uri(obj.photo.url)
+        return None
+
 
 class NewsDetailSerializer(serializers.ModelSerializer):
     author = AuthorSerializer(read_only=True)
     views = serializers.SerializerMethodField('get_views')
+    photo = serializers.SerializerMethodField('get_photo_url')
 
     class Meta:
         model = News
@@ -31,3 +39,9 @@ class NewsDetailSerializer(serializers.ModelSerializer):
 
     def get_views(self, obj):
         return obj.view_records.count() + 1
+
+    def get_photo_url(self, obj):
+        request = self.context.get('request')
+        if obj.photo and request:
+            return request.build_absolute_uri(obj.photo.url)
+        return None
