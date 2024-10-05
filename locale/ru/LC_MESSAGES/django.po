@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-03 18:29+0500\n"
+"POT-Creation-Date: 2024-10-05 10:03+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Русский <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgstr "Активен"
 
 #: advantages/models.py:12 comments/models.py:12 education/models.py:15
 #: education/models.py:50 faq/models.py:14 news/models.py:15 news/models.py:33
-#: news/models.py:65 news/models.py:81
+#: news/models.py:65 news/models.py:82
 msgid "Created at"
 msgstr "Создан"
 
@@ -94,25 +94,29 @@ msgstr "Комментарий студента"
 msgid "Student comments"
 msgstr "Комментарии студентов"
 
-#: config/settings.py:154
+#: config/settings.py:168
 msgid "Home"
 msgstr "Главная"
 
-#: config/settings.py:248
+#: config/settings.py:262
 msgid "Uzbek"
 msgstr "Узбекский"
 
-#: config/settings.py:249
+#: config/settings.py:263
 msgid "English"
 msgstr "Английский"
 
-#: config/settings.py:250
+#: config/settings.py:264
 msgid "Russian"
 msgstr "Русский"
 
 #: education/apps.py:9 education/apps.py:10
 msgid "Education"
 msgstr "Образование"
+
+#: education/forms.py:11
+msgid "Please enter at least one type of education!"
+msgstr "Пожалуйста, введите хотя бы один тип образования!"
 
 #: education/models.py:12
 msgid "Direction name"
@@ -175,7 +179,7 @@ msgid "Answer"
 msgstr "Ответ"
 
 #: news/apps.py:9 news/apps.py:10 news/models.py:71 news/models.py:72
-#: news/models.py:79
+#: news/models.py:80
 msgid "News"
 msgstr "Новости"
 
@@ -235,6 +239,6 @@ msgstr "URL видео"
 msgid "Rank"
 msgstr "Ранг"
 
-#: news/models.py:80
+#: news/models.py:81
 msgid "IP Address"
 msgstr "IP-адрес"
