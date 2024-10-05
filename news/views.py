@@ -6,7 +6,7 @@ from drf_yasg.utils import swagger_auto_schema
 
 from accounts.permissions import HasXSecretPermission
 from advantages.views import headers_params
-from .serializers import NewsSerializer
+from .serializers import NewsListSerializer, NewsDetailSerializer
 from .models import News, ViewRecord
 
 
@@ -16,7 +16,7 @@ class GetNewsListView(APIView):
     @swagger_auto_schema(
         manual_parameters=headers_params,
         operation_summary='Barcha yangiliklar ro\'yxati',
-        responses={200: NewsSerializer(many=True)},
+        responses={200: NewsListSerializer(many=True)},
         examples={
             'application/json': {
                 'X-Secret': 'YOUR_SECRET_VALUE',
@@ -27,7 +27,7 @@ class GetNewsListView(APIView):
     def get(self, request):
         news_all = News.active_objects.all().order_by('-created_at')[:20]
 
-        return Response(data=NewsSerializer(news_all, many=True).data, status=200)
+        return Response(data=NewsListSerializer(news_all, many=True).data, status=200)
 
 
 path_param = openapi.Parameter(
@@ -45,7 +45,7 @@ class GetDetailNewsView(APIView):
         manual_parameters=headers_params + [path_param],
         operation_summary='Yangilikni ID raqami orqali olish',
         responses={
-            200: NewsSerializer(many=False),
+            200: NewsDetailSerializer(many=False),
             404: openapi.Response(
                 description='Yangilik topilmadi',
                 schema=openapi.Schema(
@@ -75,7 +75,7 @@ class GetDetailNewsView(APIView):
             else:
                 return Response({'detail': 'News not found.'}, status=status.HTTP_404_NOT_FOUND)
 
-        return Response(data=NewsSerializer(news).data, status=status.HTTP_200_OK)
+        return Response(data=NewsDetailSerializer(news).data, status=status.HTTP_200_OK)
 
 def get_client_ip(request):
     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')

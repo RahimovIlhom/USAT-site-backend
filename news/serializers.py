@@ -10,7 +10,18 @@ class AuthorSerializer(serializers.ModelSerializer):
         fields = ('username', 'first_name', 'last_name')
 
 
-class NewsSerializer(serializers.ModelSerializer):
+class NewsListSerializer(serializers.ModelSerializer):
+    views = serializers.SerializerMethodField('get_views')
+
+    class Meta:
+        model = News
+        fields = ('id', 'title', 'summary', 'photo', 'video_url', 'rank', 'views', 'created_at')
+
+    def get_views(self, obj):
+        return obj.view_records.count() + 1
+
+
+class NewsDetailSerializer(serializers.ModelSerializer):
     author = AuthorSerializer(read_only=True)
     views = serializers.SerializerMethodField('get_views')
 
