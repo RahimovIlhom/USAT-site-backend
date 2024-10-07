@@ -16,6 +16,8 @@ class HasXSecretPermission(BasePermission):
         secret = request.headers.get('X-Secret')
 
         lang = request.headers.get('Accept-Language', 'uz')
+        if lang not in ['uz', 'en', 'ru']:
+            raise PermissionDenied('Tilni to\'g\'ri ko\'rsating. Variantlar: uz, en, ru')
         activate(lang)
 
         RESPONSES = {
