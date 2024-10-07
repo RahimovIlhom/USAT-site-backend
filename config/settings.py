@@ -17,7 +17,7 @@ ALLOWED_HOSTS = ['*']
 # SECURE_SSL_REDIRECT = True
 # SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS', default=[])
+CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS', default=['*'])
 
 
 # Application definition
@@ -67,6 +67,7 @@ ROOT_URLCONF = 'config.urls'
 
 # REST FRAMEWORK
 REST_FRAMEWORK = {
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema',
     'DEFAULT_RENDERER_CLASSES': (
             'rest_framework.renderers.JSONRenderer',
         ),
@@ -98,6 +99,9 @@ SWAGGER_SETTINGS = {
     },
     'DEFAULT_GENERATOR_CLASS': 'drf_yasg.generators.OpenAPISchemaGenerator',
     'SUPPORTED_SUBMIT_METHODS': ['get', 'post', 'put', 'delete', 'patch'],
+    'DEFAULT_API_URL': env.str('DEFAULT_API_URL'),
+    'DOC_EXPANSION': 'none',
+    'OPERATIONS_SORTER': None,
 }
 
 
