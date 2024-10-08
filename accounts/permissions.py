@@ -26,7 +26,7 @@ class HasXSecretPermission(BasePermission):
             'ru': 'Заголовок X-Secret введен неверно.',
         }
 
-        if secret != env.str('YOUR_SECRET_VALUE'):
+        if secret != env.str('SECRET_VALUE'):
             raise PermissionDenied(RESPONSES[lang])
 
         return True
