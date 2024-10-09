@@ -1,3 +1,4 @@
+from corsheaders.defaults import default_headers
 from django.utils.translation import gettext_lazy as _
 from pathlib import Path
 from environs import Env
@@ -127,7 +128,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'config.wsgi.application'
 
 CORS_ALLOW_ALL_ORIGINS = True
-
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    'Accept-Language',
+    'X-Secret',
+]
 
 # Database
 
