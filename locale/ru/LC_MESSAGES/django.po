@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-05 10:03+0500\n"
+"POT-Creation-Date: 2024-10-16 17:47+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: Русский <LL@li.org>\n"
@@ -33,28 +33,28 @@ msgid "Advantages"
 msgstr "Преимущества"
 
 #: advantages/models.py:8 comments/models.py:6 education/models.py:11
-#: education/models.py:48 faq/models.py:9 news/models.py:9 news/models.py:29
-#: news/models.py:56
+#: education/models.py:48 faq/models.py:9 news/models.py:10 news/models.py:30
+#: news/models.py:48 news/models.py:75
 msgid "Author"
 msgstr "Автор"
 
-#: advantages/models.py:9 news/models.py:11 news/models.py:30 news/models.py:57
+#: advantages/models.py:9 news/models.py:12 news/models.py:31 news/models.py:76
 msgid "Title"
 msgstr "Заголовок"
 
-#: advantages/models.py:10 education/models.py:13 news/models.py:13
-#: news/models.py:60
+#: advantages/models.py:10 education/models.py:13 news/models.py:14
+#: news/models.py:79
 msgid "Content"
 msgstr "Содержание"
 
 #: advantages/models.py:11 education/models.py:14 faq/models.py:13
-#: news/models.py:14 news/models.py:32 news/models.py:64
+#: news/models.py:15 news/models.py:33 news/models.py:50 news/models.py:83
 msgid "Is active"
 msgstr "Активен"
 
 #: advantages/models.py:12 comments/models.py:12 education/models.py:15
-#: education/models.py:50 faq/models.py:14 news/models.py:15 news/models.py:33
-#: news/models.py:65 news/models.py:82
+#: education/models.py:50 faq/models.py:14 news/models.py:16 news/models.py:34
+#: news/models.py:51 news/models.py:84 news/models.py:106 news/models.py:117
 msgid "Created at"
 msgstr "Создан"
 
@@ -66,7 +66,8 @@ msgstr "Преимущество"
 msgid "Comments"
 msgstr "Комментарии"
 
-#: comments/models.py:7 news/models.py:10 news/models.py:31 news/models.py:61
+#: comments/models.py:7 news/models.py:11 news/models.py:32 news/models.py:80
+#: news/models.py:116
 msgid "Photo"
 msgstr "Фото"
 
@@ -94,19 +95,19 @@ msgstr "Комментарий студента"
 msgid "Student comments"
 msgstr "Комментарии студентов"
 
-#: config/settings.py:168
+#: config/settings.py:194
 msgid "Home"
 msgstr "Главная"
 
-#: config/settings.py:262
+#: config/settings.py:288
 msgid "Uzbek"
 msgstr "Узбекский"
 
-#: config/settings.py:263
+#: config/settings.py:289
 msgid "English"
 msgstr "Английский"
 
-#: config/settings.py:264
+#: config/settings.py:290
 msgid "Russian"
 msgstr "Русский"
 
@@ -178,67 +179,99 @@ msgstr "Вопрос"
 msgid "Answer"
 msgstr "Ответ"
 
-#: news/apps.py:9 news/apps.py:10 news/models.py:71 news/models.py:72
-#: news/models.py:80
+#: news/apps.py:9 news/apps.py:10 news/models.py:90 news/models.py:91
+#: news/models.py:104 news/models.py:115
 msgid "News"
 msgstr "Новости"
 
-#: news/models.py:12
+#: news/forms.py:10
+msgid "Please enter at least one photo!"
+msgstr "Пожалуйста, введите хотя бы один тип образования!"
+
+#: news/models.py:13
 msgid "Value"
 msgstr "Значение"
 
-#: news/models.py:21
+#: news/models.py:22
 msgid "Statistic"
 msgstr "Статистика"
 
-#: news/models.py:22
+#: news/models.py:23
 msgid "Statistics"
 msgstr "Статистики"
 
-#: news/models.py:39
+#: news/models.py:40
 msgid "Gallery"
 msgstr "Галерея"
 
-#: news/models.py:40
+#: news/models.py:41
 msgid "Galleries"
 msgstr "Галереи"
 
-#: news/models.py:47
+#: news/models.py:49
+msgid "Category title"
+msgstr "Название категории"
+
+#: news/models.py:57
+msgid "News category"
+msgstr "Категория новостей"
+
+#: news/models.py:58
+msgid "News categories"
+msgstr "Категории новостей"
+
+#: news/models.py:65
 msgid "Low"
 msgstr "Низкий"
 
-#: news/models.py:48
+#: news/models.py:66
 msgid "Medium"
 msgstr "Средний"
 
-#: news/models.py:49
+#: news/models.py:67
 msgid "High"
 msgstr "Высокий"
 
-#: news/models.py:50
+#: news/models.py:68
 msgid "Very high"
 msgstr "Очень высокий"
 
-#: news/models.py:51
+#: news/models.py:69
 msgid "Extreme"
 msgstr "Экстремальный"
 
-#: news/models.py:52
+#: news/models.py:70
 msgid "Critical"
 msgstr "Критический"
 
-#: news/models.py:58
+#: news/models.py:74
+msgid "Category"
+msgstr "Категория"
+
+#: news/models.py:77
 msgid "Summary"
 msgstr "Резюме"
 
-#: news/models.py:62
+#: news/models.py:78
+msgid "Slug"
+msgstr "Ссылка"
+
+#: news/models.py:81
 msgid "Video URL"
 msgstr "URL видео"
 
-#: news/models.py:63
+#: news/models.py:82
 msgid "Rank"
 msgstr "Ранг"
 
-#: news/models.py:81
+#: news/models.py:105
 msgid "IP Address"
 msgstr "IP-адрес"
+
+#: news/models.py:122
+msgid "News image"
+msgstr "Изображение новости"
+
+#: news/models.py:123
+msgid "News images"
+msgstr "Изображения новостей"
