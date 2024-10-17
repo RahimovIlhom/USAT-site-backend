@@ -1,7 +1,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TabbedTranslationAdmin
 
-from .forms import NewsPhotoInlineFormSet
+from .forms import NewsPhotoInlineFormSet, NewsAdminForm
 from .models import Statistic, Gallery, NewsCategory, News, NewsPhoto
 
 
@@ -76,7 +76,7 @@ class NewsCategoryAdmin(TabbedTranslationAdmin):
 
 class NewsPhotoInline(admin.TabularInline):
     model = NewsPhoto
-    extra = 4
+    extra = 5
     max_num = 10
     show_change_link = True
     # formset = NewsPhotoInlineFormSet
@@ -90,6 +90,7 @@ class NewsAdmin(TabbedTranslationAdmin):
     ordering = ('-created_at',)
     exclude = ('is_active', 'author', 'slug')
     readonly_fields = ('author',)
+    # form = NewsAdminForm
     inlines = [NewsPhotoInline]
 
     def save_model(self, request, obj, form, change):

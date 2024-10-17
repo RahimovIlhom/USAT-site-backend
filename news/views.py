@@ -31,10 +31,10 @@ class GetNewsListView(APIView):
 
 
 path_param = openapi.Parameter(
-    'id',
+    'slug',
     openapi.IN_PATH,
-    description='Yangilik ID raqami',
-    type=openapi.TYPE_INTEGER
+    description='Slug',
+    type=openapi.TYPE_STRING
 )
 
 
@@ -57,12 +57,12 @@ class GetDetailNewsView(APIView):
             ),
         },
     )
-    def get(self, request, pk):
+    def get(self, request, slug):
         lang = request.headers.get('Accept-Language', 'uz')
         ip_address = get_client_ip(request)
 
         try:
-            news = News.active_objects.get(pk=pk)
+            news = News.active_objects.get(slug=slug)
 
             if not ViewRecord.objects.filter(news=news, ip_address=ip_address).exists():
                 ViewRecord.objects.create(news=news, ip_address=ip_address)

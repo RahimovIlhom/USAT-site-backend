@@ -19,4 +19,4 @@ class NewsCategoryTranslationOptions(TranslationOptions):
 
 @register(News)
 class NewsTranslationOptions(TranslationOptions):
-    fields = ('title', 'summary', 'content')
+    fields = ('title', 'summary', 'content', 'content2')

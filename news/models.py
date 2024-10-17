@@ -1,4 +1,6 @@
 from django.db import models
+from django.db.models import TextField
+from django.urls import reverse
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 from django_ckeditor_5.fields import CKEditor5Field
@@ -77,6 +79,7 @@ class News(models.Model):
     summary = models.CharField(max_length=1000, verbose_name=_('Summary'), blank=True, null=True)
     slug = models.SlugField(max_length=500, verbose_name=_('Slug'), unique=True, blank=True, null=True)
     content = models.TextField(verbose_name=_('Content'), blank=True, null=True)
+    content2 = TextField(verbose_name=_('Second content'), blank=True, null=True)
     photo = models.ImageField(upload_to='news/photos', verbose_name=_('Photo'), blank=False, null=True)
     video_url = models.URLField(verbose_name=_('Video URL'), blank=True, null=True)
     rank = models.IntegerField(default=5, verbose_name=_('Rank'), choices=RANK_CHOICES)
@@ -98,6 +101,9 @@ class News(models.Model):
             self.slug = slugify(self.title)
         super().save(*args, **kwargs)
 
+    def get_absolute_url(self):
+        return reverse('get_news_detail', kwargs={'slug': self.slug})
+
 
 class ViewRecord(models.Model):
     news = models.ForeignKey(News, on_delete=models.CASCADE, related_name='view_records',
@@ -112,7 +118,7 @@ class ViewRecord(models.Model):
 
 
 class NewsPhoto(models.Model):
-    news = models.ForeignKey(News, on_delete=models.CASCADE, verbose_name=_('News'))
+    news = models.ForeignKey(News, on_delete=models.CASCADE, verbose_name=_('News'), related_name='photos')
     photo = models.ImageField(upload_to='news/images', verbose_name=_('Photo'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('Created at'))
 

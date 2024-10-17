@@ -206,6 +206,7 @@ JAZZMIN_SETTINGS = {
         "auth": "fas fa-users-cog",
         "auth.user": "fas fa-user",
         "auth.Group": "fas fa-users",
+        "news.NewsCategory": "fas fa-folder",
         "news.News": "fas fa-newspaper",
         "news.Gallery": "fas fa-images",
         "news.Statistic": "fas fa-chart-pie",
@@ -215,7 +216,7 @@ JAZZMIN_SETTINGS = {
         "academic.Academic": "fas fa-university",
         "education.EduDirection": "fas fa-graduation-cap",
         "education.EduProgram": "fas fa-book",
-        "education.EduType": "fas fa-tags",
+        "education.EduType": "fas fa-layer-group",
     },
     "default_icon_parents": "fas fa-chevron-circle-right",
     "default_icon_children": "fas fa-circle",
@@ -331,6 +332,9 @@ CKEDITOR_5_CONFIGS = {
         'config': 'default',
     },
     'extends': {
+        'config': 'default',
+    },
+    'news': {
         'config': 'default',
     },
 }
