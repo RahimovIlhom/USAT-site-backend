@@ -100,7 +100,7 @@ class NewsDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = News
-        fields = ('id', 'category', 'author', 'title', 'slug', 'url', 'summary', 'content', 'content2', 'photo', 'photos', 'video_url', 'rank', 'views', 'created_at')
+        fields = ('id', 'category', 'author', 'title', 'slug', 'summary', 'content', 'content2', 'photo', 'photos', 'video_url', 'rank', 'views', 'created_at')
 
     def get_views(self, obj) -> int:
         return obj.view_records.count() + 1
