@@ -6,8 +6,9 @@ from drf_yasg.utils import swagger_auto_schema
 
 from accounts.permissions import HasXSecretPermission
 from advantages.views import headers_params
-from .serializers import NewsListSerializer, NewsDetailSerializer
-from .models import News, ViewRecord
+from .serializers import NewsListSerializer, NewsDetailSerializer, CategoryListWithNewsSerializer, \
+    CategoryRelatedNewsListSerializer
+from .models import News, ViewRecord, NewsCategory
 
 
 class GetNewsListView(APIView):
@@ -30,12 +31,64 @@ class GetNewsListView(APIView):
         return Response(data=NewsListSerializer(news_all, many=True, context={'request': request}).data, status=200)
 
 
+class CategoryListWithNewsView(APIView):
+    permission_classes = [HasXSecretPermission]
+    @swagger_auto_schema(
+        manual_parameters=headers_params,
+        operation_summary="Barcha ruknlar va har bir rukn ichida so'nggi 4 yangilik bilan!",
+        responses={200: CategoryListWithNewsSerializer(many=True)},
+        examples={
+            'application/json': {
+                'X-Secret': 'YOUR_SECRET_VALUE',
+                'Accept-Language': 'uz',
+            },
+        },
+    )
+    def get(self, request):
+        categories = NewsCategory.active_objects.all()
+        return Response(CategoryListWithNewsSerializer(categories, many=True, context={'request': request}).data, status=200)
+
+
 path_param = openapi.Parameter(
     'slug',
     openapi.IN_PATH,
     description='Slug',
     type=openapi.TYPE_STRING
 )
+
+
+class CategoryRelatedNewsListView(APIView):
+    permission_classes = [HasXSecretPermission]
+
+    @swagger_auto_schema(
+        manual_parameters=headers_params + [path_param],
+        operation_summary="Rukn bo'yicha yangiliklar",
+        responses={
+            200: CategoryRelatedNewsListSerializer(many=False),
+            404: openapi.Response(
+                description="Aktiv rukn topilmadi",
+                schema=openapi.Schema(
+                    type=openapi.TYPE_OBJECT,
+                    properties = {
+                        'detail': openapi.Schema(type=openapi.TYPE_STRING, example='Rukn topilmadi (uz)')
+                    }
+                ),
+            )
+        }
+    )
+    def get(self, request, slug):
+        lang = request.headers.get('Accept-Language', 'uz')
+        try:
+            category = NewsCategory.active_objects.get(slug=slug)
+        except NewsCategory.DoesNotExist:
+            resp_category_404 = {
+                'uz': "Rukn topilmadi",
+                'en': "Category not found",
+                'ru': "Категория не найдена"
+            }
+            return Response({'detail': resp_category_404[lang]}, status=404)
+
+        return Response(CategoryRelatedNewsListSerializer(category, context={'request': request}).data, status=200)
 
 
 class GetDetailNewsView(APIView):

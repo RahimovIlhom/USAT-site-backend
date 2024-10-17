@@ -47,8 +47,9 @@ class Gallery(models.Model):
 
 
 class NewsCategory(models.Model):
-    author = models.ForeignKey('auth.User', on_delete=models.CASCADE, verbose_name=_('Author'))
+    author = models.ForeignKey('auth.User', on_delete=models.SET_NULL, verbose_name=_('Author'), null=True, blank=False)
     title = models.CharField(max_length=255, verbose_name=_('Category title'))
+    slug = models.SlugField(max_length=255, verbose_name=_('Slug'), unique=True,  null=True, blank=True)
     is_active = models.BooleanField(default=True, verbose_name=_('Is active'))
     created_at = models.DateTimeField(auto_now_add=True, verbose_name=_('Created at'))
 
@@ -62,6 +63,14 @@ class NewsCategory(models.Model):
     def __str__(self):
         return self.title
 
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+        super().save(*args, **kwargs)
+
+    def get_absolute_url(self):
+        return reverse('get_category_related_news_list', kwargs={'slug': self.slug})
+
 
 RANK_CHOICES = (
     (0, _('Low')),
@@ -73,8 +82,9 @@ RANK_CHOICES = (
 )
 
 class News(models.Model):
-    category = models.ForeignKey(NewsCategory, on_delete=models.SET_NULL, verbose_name=_('Category'), null=True, blank=False)
-    author = models.ForeignKey('auth.User', on_delete=models.CASCADE, verbose_name=_('Author'))
+    category = models.ForeignKey(NewsCategory, on_delete=models.SET_NULL, verbose_name=_('Category'), null=True, blank=False,
+                                 related_name='news_set')
+    author = models.ForeignKey('auth.User', on_delete=models.CASCADE, verbose_name=_('Author'), related_name='news_set')
     title = models.CharField(max_length=500, verbose_name=_('Title'))
     summary = models.CharField(max_length=1000, verbose_name=_('Summary'), blank=True, null=True)
     slug = models.SlugField(max_length=500, verbose_name=_('Slug'), unique=True, blank=True, null=True)

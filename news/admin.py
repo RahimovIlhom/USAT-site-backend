@@ -57,7 +57,7 @@ class NewsCategoryAdmin(TabbedTranslationAdmin):
     list_filter = ('author', )
     search_fields = ('name',)
     ordering = ('-created_at',)
-    exclude = ('is_active', 'author')
+    exclude = ('is_active', 'author', 'slug')
     readonly_fields = ('author',)
 
     def save_model(self, request, obj, form, change):
