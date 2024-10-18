@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 12:24+0500\n"
+"POT-Creation-Date: 2024-10-18 17:04+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: O'zbek <LL@li.org>\n"
@@ -31,28 +31,28 @@ msgid "Advantages"
 msgstr "Afzalliklar"
 
 #: advantages/models.py:8 comments/models.py:6 education/models.py:11
-#: education/models.py:48 faq/models.py:9 news/models.py:12 news/models.py:32
-#: news/models.py:50 news/models.py:77
+#: education/models.py:48 faq/models.py:9 news/models.py:10 news/models.py:30
+#: news/models.py:48 news/models.py:84
 msgid "Author"
 msgstr "Muallif"
 
-#: advantages/models.py:9 news/models.py:14 news/models.py:33 news/models.py:78
+#: advantages/models.py:9 news/models.py:12 news/models.py:31 news/models.py:85
 msgid "Title"
 msgstr "Sarlavha"
 
-#: advantages/models.py:10 education/models.py:13 news/models.py:16
-#: news/models.py:81
+#: advantages/models.py:10 education/models.py:13 news/models.py:14
+#: news/models.py:88
 msgid "Content"
 msgstr "Matn"
 
-#: advantages/models.py:11 education/models.py:14 faq/models.py:13
-#: news/models.py:17 news/models.py:35 news/models.py:52 news/models.py:86
+#: advantages/models.py:11 education/models.py:14 faq/models.py:12
+#: news/models.py:15 news/models.py:33 news/models.py:51 news/models.py:93
 msgid "Is active"
 msgstr "Faol"
 
 #: advantages/models.py:12 comments/models.py:12 education/models.py:15
-#: education/models.py:50 faq/models.py:14 news/models.py:18 news/models.py:36
-#: news/models.py:53 news/models.py:87 news/models.py:112 news/models.py:123
+#: education/models.py:50 faq/models.py:13 news/models.py:16 news/models.py:34
+#: news/models.py:52 news/models.py:94 news/models.py:119 news/models.py:130
 msgid "Created at"
 msgstr "Yaratilgan sana"
 
@@ -64,8 +64,8 @@ msgstr "Afzallik "
 msgid "Comments"
 msgstr "Izohlar"
 
-#: comments/models.py:7 news/models.py:13 news/models.py:34 news/models.py:83
-#: news/models.py:122
+#: comments/models.py:7 news/models.py:11 news/models.py:32 news/models.py:90
+#: news/models.py:129
 msgid "Photo"
 msgstr "Rasm"
 
@@ -93,19 +93,19 @@ msgstr "Talaba izohi "
 msgid "Student comments"
 msgstr "Talabalar izohlari"
 
-#: config/settings.py:194
+#: config/settings.py:196
 msgid "Home"
 msgstr "Bosh sahifa"
 
-#: config/settings.py:289
+#: config/settings.py:291
 msgid "Uzbek"
 msgstr "O'zbek"
 
-#: config/settings.py:290
+#: config/settings.py:292
 msgid "English"
 msgstr "Inglizcha"
 
-#: config/settings.py:291
+#: config/settings.py:293
 msgid "Russian"
 msgstr "Ruscha"
 
@@ -161,11 +161,11 @@ msgstr "Ta'lim turi nomi"
 msgid "Edu types"
 msgstr "Ta'lim turlari"
 
-#: faq/apps.py:9 faq/models.py:23
+#: faq/apps.py:9 faq/models.py:22
 msgid "FAQ"
 msgstr "Ko'p beriladigan savol "
 
-#: faq/apps.py:10 faq/models.py:24
+#: faq/apps.py:10 faq/models.py:23
 msgid "FAQs"
 msgstr "Ko'p beriladigan savollar"
 
@@ -173,12 +173,12 @@ msgstr "Ko'p beriladigan savollar"
 msgid "Question"
 msgstr "Savol"
 
-#: faq/models.py:12
+#: faq/models.py:11
 msgid "Answer"
 msgstr "Javob"
 
-#: news/apps.py:9 news/apps.py:10 news/models.py:93 news/models.py:94
-#: news/models.py:110 news/models.py:121
+#: news/apps.py:9 news/apps.py:10 news/models.py:100 news/models.py:101
+#: news/models.py:117 news/models.py:128
 msgid "News"
 msgstr "Yangiliklar "
 
@@ -186,97 +186,91 @@ msgstr "Yangiliklar "
 msgid "Please enter at least one photo!"
 msgstr "Iltimos, kamida bitta ta'lim turini kiriting!"
 
-#: news/models.py:15
+#: news/models.py:13
 msgid "Value"
 msgstr "Qiymat"
 
-#: news/models.py:24
+#: news/models.py:22
 msgid "Statistic"
 msgstr "Statistika "
 
-#: news/models.py:25
+#: news/models.py:23
 msgid "Statistics"
 msgstr "Statistikalar"
 
-#: news/models.py:42
+#: news/models.py:40
 msgid "Gallery"
 msgstr "Galereya "
 
-#: news/models.py:43
+#: news/models.py:41
 msgid "Galleries"
 msgstr "Galereyalar"
 
-#: news/models.py:51
+#: news/models.py:49
 msgid "Category title"
 msgstr "Kategoriya nomi"
 
-#: news/models.py:59
-msgid "News category"
-msgstr "Yangilik rukni "
-
-#: news/models.py:60
-msgid "News categories"
-msgstr "Yangilik ruknlari"
-
-#: news/models.py:67
-msgid "Low"
-msgstr "Past"
-
-#: news/models.py:68
-msgid "Medium"
-msgstr "O'rta"
-
-#: news/models.py:69
-msgid "High"
-msgstr "Yuqori"
-
-#: news/models.py:70
-msgid "Very high"
-msgstr "Juda yuqori"
-
-#: news/models.py:71
-msgid "Extreme"
-msgstr "Ekstremal"
-
-#: news/models.py:72
-msgid "Critical"
-msgstr "Kritik"
-
-#: news/models.py:76
-msgid "Category"
-msgstr "Rukn"
-
-#: news/models.py:79
-msgid "Summary"
-msgstr "Xulosa"
-
-#: news/models.py:80
+#: news/models.py:50 news/models.py:87
 msgid "Slug"
 msgstr "Slug"
 
+#: news/models.py:58
+msgid "News category"
+msgstr "Yangilik rukni "
+
+#: news/models.py:59
+msgid "News categories"
+msgstr "Yangilik ruknlari"
+
 #: news/models.py:82
+msgid "Category"
+msgstr "Rukn"
+
+#: news/models.py:86
+msgid "Summary"
+msgstr "Xulosa"
+
+#: news/models.py:89
 msgid "Second content"
 msgstr "Ikkinchi matn"
 
-#: news/models.py:84
+#: news/models.py:91
 msgid "Video URL"
 msgstr "Video URL"
 
-#: news/models.py:85
+#: news/models.py:92
 msgid "Rank"
 msgstr "Daraja"
 
-#: news/models.py:111
+#: news/models.py:118
 msgid "IP Address"
 msgstr "Elektron pochta manzili"
 
-#: news/models.py:128
+#: news/models.py:135
 msgid "News image"
 msgstr "Yangilik rasmi "
 
-#: news/models.py:129
+#: news/models.py:136
 msgid "News images"
 msgstr "Yangilik rasmlari"
+
+#~ msgid "Low"
+#~ msgstr "Past"
+
+#~ msgid "Medium"
+#~ msgstr "O'rta"
+
+#~ msgid "High"
+#~ msgstr "Yuqori"
+
+#~ msgid "Very high"
+#~ msgstr "Juda yuqori"
+
+#~ msgid "Extreme"
+#~ msgstr "Ekstremal"
+
+#~ msgid "Critical"
+#~ msgstr "Kritik"
 
 #: admin.py:9
 msgid "Dashboard"

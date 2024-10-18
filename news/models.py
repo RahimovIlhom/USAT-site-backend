@@ -1,10 +1,8 @@
+from ckeditor.fields import RichTextField
 from django.db import models
-from django.db.models import TextField
 from django.urls import reverse
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
-from django_ckeditor_5.fields import CKEditor5Field
-
 from education.models import ActiveObjectManager
 
 
@@ -73,12 +71,11 @@ class NewsCategory(models.Model):
 
 
 RANK_CHOICES = (
-    (0, _('Low')),
-    (1, _('Medium')),
-    (2, _('High')),
-    (3, _('Very high')),
-    (4, _('Extreme')),
-    (5, _('Critical')),
+    (1, '⭐️'),
+    (2, '⭐️⭐️'),
+    (3, '⭐️⭐️⭐️'),
+    (4, '⭐️⭐️⭐️⭐️'),
+    (5, '⭐️⭐️⭐️⭐️⭐️'),
 )
 
 class News(models.Model):
@@ -88,8 +85,8 @@ class News(models.Model):
     title = models.CharField(max_length=500, verbose_name=_('Title'))
     summary = models.CharField(max_length=1000, verbose_name=_('Summary'), blank=True, null=True)
     slug = models.SlugField(max_length=500, verbose_name=_('Slug'), unique=True, blank=True, null=True)
-    content = models.TextField(verbose_name=_('Content'), blank=True, null=True)
-    content2 = TextField(verbose_name=_('Second content'), blank=True, null=True)
+    content = RichTextField(verbose_name=_('Content'), blank=True, null=True, config_name='default')
+    content2 = RichTextField(verbose_name=_('Second content'), blank=True, null=True, config_name='default')
     photo = models.ImageField(upload_to='news/photos', verbose_name=_('Photo'), blank=False, null=True)
     video_url = models.URLField(verbose_name=_('Video URL'), blank=True, null=True)
     rank = models.IntegerField(default=5, verbose_name=_('Rank'), choices=RANK_CHOICES)

@@ -30,11 +30,16 @@ urlpatterns = [
     path('api/docs/redoc/', login_required(schema_view.with_ui('redoc', cache_timeout=0)), name='schema-redoc'),
     path('api/v1/advantages/', include('advantages.urls')),
     path('api/v1/news/', include('news.urls')),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 urlpatterns += i18n_patterns(
     path('admin/', admin.site.urls),
-    path("ckeditor5/", include('django_ckeditor_5.urls')),
+    # path("ckeditor5/", include('django_ckeditor_5.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 )
 
 if settings.USE_I18N:
